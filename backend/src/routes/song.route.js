@@ -1,9 +1,13 @@
 const express = require('express')
 const router = express.Router()
+const multer = require('multer')
 
-router.post('/songs',(req,res)=>{
+const upload = multer({storage:multer.memoryStorage()})
+
+router.post('/songs',upload.single('audio'),(req,res)=>{
   console.log(req.body);
   console.log(req.file);
+  
   res.status(201).json({
     message:"song created successfullly"
   })
