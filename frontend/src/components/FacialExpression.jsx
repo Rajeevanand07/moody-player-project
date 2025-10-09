@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 import * as faceapi from "face-api.js";
 import { toast } from "react-toastify";
-import axios from "axios"
+import axios from "axios";
 
-export default function FacialExpression() {
+export default function FacialExpression({setSongs}) {
   const videoRef = useRef();
   const [cameraOpen, setCameraOpen] = useState(false);
 
@@ -34,8 +34,11 @@ export default function FacialExpression() {
         (key) => expression[key] === maxValue
       );
       toast.success(`${emotion} face detected`);
-      const {data} = await axios.get(`http://localhost:3000/songs?mood=${emotion}`)
+      const { data } = await axios.get(
+        `http://localhost:3000/songs?mood=${emotion}`
+      );
       console.log(data.songs);
+      setSongs(data.songs);
     }
   };
 

@@ -12,9 +12,9 @@ const Nav = () => {
           <span className="absolute left-0 bottom-0 w-full h-[1.5px] bg-[#1db954] scale-x-0 group-hover:scale-x-100 transition-all duration-[300ms] ease-in-out origin-center"></span>
         </div>
       </div>
-      <button className="text-[#1db954] px-5 py-2 rounded-full font-semibold hover:text-white hover:bg-[#1db954] transition-all duration-400 ease-in-out">
-  login
-</button>
+      <button className="text-white bg-[#1db954] px-5 py-2 rounded-full font-semibold hover:text-white hover:bg-[#38D970] transition-all duration-400 ease-in-out">
+        login
+      </button>
     </div>
   );
 };
