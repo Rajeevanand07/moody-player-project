@@ -10,10 +10,10 @@ const Skeleton = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-5">
-        <p className="text-7xl text-center capitalize text-[#1db954] font-semibold">
-          The <span className=" text-7xl font-black text-[#191414]">lens</span>{" "}
+        <p className=" text-7xl lg:text-5xl xl:text-7xl text-center capitalize text-[#1db954] font-semibold">
+          The <span className="font-black text-[#191414]">lens</span>{" "}
           feels the{" "}
-          <span className="text-7xl font-black text-[#191414]">beat</span>.
+          <span className="font-black text-[#191414]">beat</span>.
         </p>
         <div className="mt-10 mx-10 w-full max-w-xl md:mx-auto rounded-2xl border border-gray-200 bg-white shadow-sm p-6">
           <div className="flex items-center justify-between gap-5">
