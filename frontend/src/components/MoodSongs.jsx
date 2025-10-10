@@ -16,7 +16,7 @@ const MoodSongs = ({ songs }) => {
 
   return (
     <>
-      <div className="flex justify-center items-center mt-4">
+      <div className="flex justify-center text-center items-center mt-4">
         {songs.length === 0 ? (
           <p className="mt-20 text-5xl capitalize text-[#1db954] font-black">
             Camera{" "}
@@ -29,7 +29,7 @@ const MoodSongs = ({ songs }) => {
             </span>
           </p>
         ) : (
-          <ul className="flex flex-col gap-1.5 w-[50%]">
+          <ul className="flex flex-col gap-1.5 w-[80%] md:w-[50%]">
             {songs.map((song, index) => (
               <li
                 onClick={() => handlePlayPause(index)}

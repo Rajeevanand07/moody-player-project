@@ -60,7 +60,7 @@ export default function FacialExpression({setSongs}) {
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-3">
-        <div className="w-[30rem] h-[20rem] rounded-xl overflow-hidden relative flex items-center justify-center">
+        <div className="w-[25rem] h-[15rem] md:w-[30rem] md:h-[20rem] rounded-xl overflow-hidden relative flex items-center justify-center">
           <video
             ref={videoRef}
             autoPlay

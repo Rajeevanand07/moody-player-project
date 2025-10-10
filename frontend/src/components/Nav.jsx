@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
-
+import logo from "../../public/logo.png";
 const Nav = () => {
   return (
     <div className="flex justify-between items-center py-5 px-9 gap-6">
-      <h1 className="text-[#1db954] text-2xl font-bold">logo</h1>
+      <div className="w-15">
+        <img className="w-full h-full object-cover" src={logo} alt="" />
+      </div>
       <div className="flex gap-5">
         <NavLink to="/">
           {({ isActive }) => (

@@ -15,14 +15,14 @@ const Skeleton = () => {
           feels the{" "}
           <span className="text-7xl font-black text-[#191414]">beat</span>.
         </p>
-        <div className="mt-10 w-full max-w-xl mx-auto rounded-2xl border border-gray-200 bg-white shadow-sm p-6">
+        <div className="mt-10 mx-10 w-full max-w-xl md:mx-auto rounded-2xl border border-gray-200 bg-white shadow-sm p-6">
           <div className="flex items-center justify-between gap-5">
             <div className="w-24 h-24 rounded-md overflow-hidden bg-gray-100">
               <img src={currentSong?.image} alt="" />
             </div>
             <div className="flex flex-col items-center gap-2 justify-center">
             <div className="flex-1 min-w-0">
-              <div className="text-xl font-semibold text-[#191414] truncate">
+              <div className="text-xl capitalize font-semibold text-[#191414] truncate">
                 {currentSong?.title || "Track Title"}
               </div>
               <div className="text-sm mt-[-5px] text-gray-500 truncate">
@@ -46,7 +46,7 @@ const Skeleton = () => {
             <audio
               className="hidden"
               autoPlay={isPlaying}
-              src={currentSong.audio}
+              src={currentSong?.audio || ""}
               controls
               onEnded={nextSong}
             />
