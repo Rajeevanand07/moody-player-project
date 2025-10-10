@@ -5,12 +5,12 @@ import Skeleton from "./components/Skeleton";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import AllSongs from "./components/AllSongs";
+import { SongProvider } from "./context/songContext";
 
 function App() {
-  const [songs, setSongs] = useState([]);
   return (
-    <>
-    <Router>
+    <SongProvider>
+      <Router>
         <Nav />
         <div className="flex justify-center h-[85%] pl-20 overflow-y-hidden" >
           <div className="w-[30%] mt-20">
@@ -18,13 +18,13 @@ function App() {
           </div>
           <div className="w-[70%] h-[100%] overflow-y-hidden">
             <Routes>
-              <Route path="/" element={<AllSongs/>} />
-              <Route path="/songs" element={<Home songs={songs} setSongs={setSongs} />} />
+              <Route path="/" element={<AllSongs />} />
+              <Route path="/songs" element={<Home />} />
             </Routes>
           </div>
         </div>
-    </Router>
-    </>
+      </Router>
+    </SongProvider>
   );
 }
 

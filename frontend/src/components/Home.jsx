@@ -1,11 +1,15 @@
 import FacialExpression from "./FacialExpression";
 import MoodSongs from "./MoodSongs";
+import { useContext } from "react";
+import { SongContext } from "../context/songContext";
 
-const Home = ({ songs, setSongs }) => {
+const Home = () => {
+  const { moodSongs, setMoodSongs } = useContext(SongContext);
+
   return (
     <>
-      <FacialExpression setSongs={setSongs} />
-      <MoodSongs songs={songs} />
+      <FacialExpression setSongs={setMoodSongs} />
+      <MoodSongs songs={moodSongs} />
     </>
   );
 };

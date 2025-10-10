@@ -1,37 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IoMdPlay, IoMdPause } from "react-icons/io";
 import axios from "axios";
+import { SongContext } from "../context/songContext";
 
 const AllSongs = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [isPlaying, setIsPlaying] = useState(null);
-  const [songs, setSongs] = useState([]);
+  const { playSong, pauseSong, currentSongIndex, isPlaying, getCurrentSongs, getCurrentSetSongs } = useContext(SongContext);
+
+  const currentSongs = getCurrentSongs();
+  const setCurrentSongs = getCurrentSetSongs();
 
   const handlePlayPause = (index) => {
-    if (isPlaying === index) {
-      setIsPlaying(null);
+    if (currentSongIndex === index && isPlaying) {
+      pauseSong();
     } else {
-      setIsPlaying(index);
+      playSong(index);
     }
   };
 
   useEffect(() => {
     async function fetchData() {
       const response = await axios.get("http://localhost:3000/");
-      setSongs(response.data.songs);
+      setCurrentSongs(response.data.songs);
     }
     fetchData();
-  }, []);
+  }, [setCurrentSongs]);
 
   return (
     <div className="h-[100%] overflow-y-auto">
       <div className="mt-6 p-10 grid grid-cols-4 gap-4 transition-all duration-700 ease-in-out">
-        {songs.length === 0 ? (
+        {currentSongs.length === 0 ? (
           <p className="text-center text-gray-500 py-8 col-span-4">
             No songs available
           </p>
         ) : (
-          songs.map((song, index) => (
+          currentSongs.map((song, index) => (
             <div
               key={song._id}
               onClick={() => handlePlayPause(index)}
@@ -52,19 +55,9 @@ const AllSongs = () => {
               {hoveredIndex === index && (
                 <div className="absolute inset-0 flex items-end justify-end p-4">
                   <button className="p-3 bg-[#1db954] text-white rounded-full hover:bg-[#1ed760] transition-all duration-700 ease-in-out">
-                    {isPlaying === index ? <IoMdPause /> : <IoMdPlay />}
+                    {currentSongIndex === index && isPlaying ? <IoMdPause /> : <IoMdPlay />}
                   </button>
                 </div>
-              )}
-
-              {/* Audio */}
-              {isPlaying === index && (
-                <audio
-                  className="hidden"
-                  autoPlay
-                  src={song.audio}
-                  controls
-                />
               )}
 
               {/* Song info */}

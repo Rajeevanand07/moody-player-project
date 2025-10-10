@@ -1,6 +1,12 @@
-import React from "react";
-import { IoMdPlay, IoMdSkipForward, IoMdSkipBackward } from "react-icons/io";
+import React, { useContext } from "react";
+import { IoMdPlay, IoMdSkipForward, IoMdSkipBackward, IoMdPause } from "react-icons/io";
+import { SongContext } from "../context/songContext";
+
 const Skeleton = () => {
+  const { getCurrentSongs, currentSongIndex, togglePlayPause, isPlaying, nextSong, previousSong } = useContext(SongContext);
+  const currentSongs = getCurrentSongs();
+  const currentSong = currentSongs[currentSongIndex];
+
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-5">
@@ -12,42 +18,39 @@ const Skeleton = () => {
         <div className="mt-10 w-full max-w-xl mx-auto rounded-2xl border border-gray-200 bg-white shadow-sm p-6">
           <div className="flex items-center justify-between gap-5">
             <div className="w-24 h-24 rounded-md overflow-hidden bg-gray-100">
-              <div className="w-full h-full bg-gradient-to-br from-emerald-100 to-emerald-200" />
+              <img src={currentSong?.image} alt="" />
             </div>
             <div className="flex flex-col items-center gap-2 justify-center">
             <div className="flex-1 min-w-0">
               <div className="text-xl font-semibold text-[#191414] truncate">
-                Track Title
+                {currentSong?.title || "Track Title"}
               </div>
-              <div className="text-sm mt-[-5px] text-gray-500 truncate">Artist Name</div>
+              <div className="text-sm mt-[-5px] text-gray-500 truncate">
+                {currentSong?.artist || "Artist Name"}
+              </div>
             </div>
             <div className="flex items-center gap-3">
-              <button className="px-3 py-2 rounded-md bg-gray-100 text-[#191414] hover:bg-gray-200">
-                <IoMdSkipBackward size={20} />
+              <button onClick={previousSong} className="px-3 py-2 rounded-md bg-gray-100 text-[#191414] hover:bg-gray-200">
+                <IoMdSkipBackward />
               </button>
-              <button className="px-4 py-3 rounded-full bg-[#1db954] text-white hover:brightness-95">
-                <IoMdPlay size={22} />
+              <button onClick={togglePlayPause} className={`px-4 py-3 rounded-full text-white hover:brightness-95 ${isPlaying ? 'bg-red-500' : 'bg-[#1db954]'}`}>
+                {isPlaying ? <IoMdPause size={22} /> : <IoMdPlay size={22} />}
               </button>
-              <button className="px-3 py-2 rounded-md bg-gray-100 text-[#191414] hover:bg-gray-200">
-                <IoMdSkipForward size={20} />
+              <button onClick={nextSong} className="px-3 py-2 rounded-md bg-gray-100 text-[#191414] hover:bg-gray-200">
+                <IoMdSkipForward />
               </button>
             </div>
             </div>
           </div>
-          <div className="mt-5">
-            <input
-              type="range"
-              min={0}
-              max={225}
-              defaultValue={45}
-              readOnly
-              className="w-full accent-[#1db954] cursor-default"
+          {isPlaying && (
+            <audio
+              className="hidden"
+              autoPlay={isPlaying}
+              src={currentSong.audio}
+              controls
+              onEnded={nextSong}
             />
-            <div className="flex justify-between text-xs text-gray-500 mt-1">
-              <span>0:45</span>
-              <span>3:45</span>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </>

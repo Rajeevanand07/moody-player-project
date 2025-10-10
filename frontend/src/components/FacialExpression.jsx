@@ -37,7 +37,6 @@ export default function FacialExpression({setSongs}) {
       const { data } = await axios.get(
         `http://localhost:3000/songs?mood=${emotion}`
       );
-      console.log(data.songs);
       setSongs(data.songs);
     }
   };
