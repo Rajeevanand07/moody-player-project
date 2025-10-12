@@ -29,7 +29,7 @@ const MoodSongs = ({ songs }) => {
             </span>
           </p>
         ) : (
-          <ul className="flex flex-col gap-1.5 w-[80%] md:w-[50%]">
+          <ul className="flex flex-col gap-1.5 w-[100%] sm:w-[80%] md:w-[50%]">
             {songs.map((song, index) => (
               <li
                 onClick={() => handlePlayPause(index)}
