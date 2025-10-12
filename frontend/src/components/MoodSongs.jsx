@@ -44,7 +44,7 @@ const MoodSongs = ({ songs }) => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div>
+                  <div className="flex flex-col items-start">
                     <h3 className="text-xl capitalize text-[#191414] font-semibold">
                       {song.title}
                     </h3>

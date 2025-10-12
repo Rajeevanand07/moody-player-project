@@ -22,9 +22,7 @@ router.post('/login', async (req, res) => {
   if (!user || !pass) return res.status(400).json({ error: 'Missing credentials' });
 
   if (user !== ADMIN_USER) return res.status(401).json({ error: 'Invalid user or pass hmmm...' });
-  console.log("user", user);
-  console.log("pass", pass);
-  
+
   const valid = await bcrypt.compare(pass, ADMIN_PASS);
   if (!valid) return res.status(401).json({ error: 'Invalid user or pass after bcrypt' });
 
