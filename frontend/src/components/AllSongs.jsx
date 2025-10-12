@@ -4,7 +4,6 @@ import axios from "axios";
 import { SongContext } from "../context/songContext";
 
 const AllSongs = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const { playSong, pauseSong, currentSongIndex, isPlaying, getCurrentSongs, getCurrentSetSongs } = useContext(SongContext);
 
   const currentSongs = getCurrentSongs();
@@ -39,8 +38,6 @@ const AllSongs = () => {
               key={song._id}
               onClick={() => handlePlayPause(index)}
               className="relative rounded-lg overflow-hidden cursor-pointer group"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Cover Image */}
               <div className="rounded-lg overflow-hidden">
@@ -52,13 +49,13 @@ const AllSongs = () => {
               </div>
 
               {/* Overlay on hover */}
-              {hoveredIndex === index && (
-                <div className="absolute inset-0 flex items-end justify-end md:p-4 py-4">
-                  <button className="p-3 bg-[#1db954] text-white rounded-full hover:bg-[#1ed760] transition-all duration-700 ease-in-out">
+              
+                <div className="absolute opacity-0 active:opacity-100 translate-y-[15px] active:translate-y-0 group-hover:opacity-100 group-hover:translate-y-0 inset-0 flex items-end justify-end md:p-4 py-4 transition-all duration-300 ease-in-out">
+                  <button className="p-3 bg-[#1db954] text-white rounded-full hover:bg-[#1ed760] transition-all duration-300 ease-in-out">
                     {currentSongIndex === index && isPlaying ? <IoMdPause /> : <IoMdPlay />}
                   </button>
                 </div>
-              )}
+              
 
               {/* Song info */}
               <div className="p-3">
