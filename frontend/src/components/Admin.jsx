@@ -41,6 +41,7 @@ const Admin = () => {
       localStorage.removeItem("token");
       reset1();
       setLoading(false);
+      navigate('/');
     } catch (error) {
       console.log(error);
       setLoading(false);
@@ -64,7 +65,6 @@ const Admin = () => {
       localStorage.setItem("token", res.data.token);
       setIsLogin(true);
       reset2();
-      navigate('/');
     } catch (error) {
       console.log(error);
       toast.error("Login failed");
