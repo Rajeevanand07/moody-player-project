@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import AllSongs from "./components/AllSongs";
 import { SongProvider } from "./context/songContext";
 import Footer from "./components/Footer";
+import Admin from "./components/Admin";
 
 
 function App() {
@@ -13,14 +14,15 @@ function App() {
     <SongProvider>
       <Router>
         <Nav />
-        <div className="flex mt-20 flex-col justify-center px-5 overflow-y-hidden gap-10 lg:gap-0 lg:mt-0 lg:flex-row lg:h-[80%]" >
+        <div className="flex mt-20 flex-col justify-center h-[80%] px-5 gap-10 lg:gap-0 lg:mt-0 lg:flex-row" >
           <div className="lg:w-[30%] lg:mt-20">
             <Skeleton />
           </div>
-          <div className="lg:w-[70%] md:mt-0 lg:h-[100%] lg:overflow-y-hidden">
+          <div className="lg:w-[70%] md:mt-0">
             <Routes>
               <Route path="/" element={<AllSongs />} />
               <Route path="/songs" element={<Home />} />
+              <Route path="/admin" element={<Admin />} />
             </Routes>
           </div>
         </div>

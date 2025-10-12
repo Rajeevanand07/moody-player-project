@@ -28,9 +28,9 @@ const Nav = () => {
           )}
         </NavLink>
       </div>
-      <NavLink to="/login">
+      <NavLink to="/admin">
         <button className="text-white bg-[#1db954] px-5 py-2 rounded-full font-semibold hover:text-white hover:bg-[#38D970] transition-all duration-400 ease-in-out">
-          Login
+          Admin
         </button>
       </NavLink>
     </div>
