@@ -20,7 +20,7 @@ const AllSongs = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get("http://localhost:3000/");
+      const response = await axios.get("https://moody-player-project.onrender.com/");
       setCurrentSongs(response.data.songs);
     }
     fetchData();

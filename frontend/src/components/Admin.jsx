@@ -30,7 +30,7 @@ const Admin = () => {
     formData.append("image", data.image[0]);
 
     try {
-      const res = await axios.post("http://localhost:3000/songs", formData, {
+      const res = await axios.post("https://moody-player-project.onrender.com/songs", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -48,7 +48,7 @@ const Admin = () => {
   const handleLogin = async (data) => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/admin/login",
+        "https://moody-player-project.onrender.com/admin/login",
         JSON.stringify({
           user: data.name,
           pass: data.pass,

@@ -35,7 +35,7 @@ export default function FacialExpression({setSongs}) {
       );
       toast.success(`${emotion} face detected`);
       const { data } = await axios.get(
-        `http://localhost:3000/songs?mood=${emotion}`
+        `https://moody-player-project.onrender.com/songs?mood=${emotion}`
       );
       setSongs(data.songs);
     }
