@@ -9,7 +9,7 @@ const Skeleton = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center gap-5">
+      <div className="flex sticky top-[25%] flex-col justify-center items-center gap-5">
         <p className=" text-7xl lg:text-5xl xl:text-7xl text-center capitalize text-[#1db954] font-semibold">
           The <span className="font-black text-[#191414]">lens</span>{" "}
           feels the{" "}

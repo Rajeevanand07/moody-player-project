@@ -27,7 +27,7 @@ const AllSongs = () => {
   }, [setCurrentSongs]);
 
   return (
-    <div className="h-[100%] overflow-y-auto">
+    <div className="h-[100%]">
       <div className="mt-6 lg:px-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 transition-all duration-700 ease-in-out">
         {currentSongs.length === 0 ? (
           <p className="text-center text-gray-500 py-8 col-span-4">

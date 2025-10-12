@@ -14,8 +14,8 @@ function App() {
     <SongProvider>
       <Router>
         <Nav />
-        <div className="flex mt-20 flex-col justify-center  px-5 gap-10 lg:gap-0 lg:mt-0 lg:flex-row" >
-          <div className="lg:w-[30%] lg:mt-20">
+        <div className="flex mt-20 flex-col justify-center px-5 gap-10 lg:gap-0 lg:mt-0 lg:flex-row" >
+          <div className="lg:w-[30%] lg:mt-20 lg:min-h-[70vh]">
             <Skeleton />
           </div>
           <div className="lg:w-[70%] md:mt-0">
