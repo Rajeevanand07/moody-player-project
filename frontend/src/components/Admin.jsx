@@ -2,8 +2,10 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Admin = () => {
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(localStorage.getItem('token')?true:false);
   const [loading, setLoading] = useState(false);
   const {
@@ -62,6 +64,7 @@ const Admin = () => {
       localStorage.setItem("token", res.data.token);
       setIsLogin(true);
       reset2();
+      navigate('/');
     } catch (error) {
       console.log(error);
       toast.error("Login failed");
