@@ -12,9 +12,17 @@ The platform blends minimalism with smart functionality, enabling users to **org
 
 ## 🔧 **Tech Stack**
 
-**Frontend:** React.js • Tailwind CSS • ImageKit (Cloud Storage) • Vercel (Deployment)
-**Backend:** Node.js • Express.js • MongoDB • JWT (Authentication) • Render (Deployment)
-**AI Model:** face-api.js (Mood Detection)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
+[![face-api.js](https://img.shields.io/badge/face--api.js-1572B6?style=for-the-badge&logo=ai&logoColor=white)](https://github.com/justadudewhohacks/face-api.js/)
+[![ImageKit](https://img.shields.io/badge/ImageKit-0080FF?style=for-the-badge&logo=imagekit&logoColor=white)](https://imagekit.io/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)](https://render.com/)
+
 
 ---
 
