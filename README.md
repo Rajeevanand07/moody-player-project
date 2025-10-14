@@ -8,6 +8,8 @@ The project focuses on a smooth user interface, real-time playback, and mood cat
 
 The platform blends minimalism with smart functionality, enabling users to **organize, stream, and discover** music in a visually immersive environment.
 
+live project here: [Moody Player Live](https://moody-player-project.vercel.app/)
+
 ---
 
 ## 🔧 **Tech Stack**
